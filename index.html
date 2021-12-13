@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Wheather Forecast</title>
+  </head>
+  <body>
+    <h1>UK Wheather Forecast Details</h1>
+    <div class="container">
+
+    <form method="post" action="{{ 'display_wheather' }}">
+        {% csrf_token %}
+          <div class="form-group">
+            <div class="input-group">
+                  <input type="radio" name = "stat" value="ranked">
+                  <h4>Rank ordered statistics</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name = "stat" value="date">
+                  <h4>Year ordered statistics</h4>
+            </div>
+
+          </div>
+          <div class="form-group">
+                <label for="region">Region</label>
+                <select id="region" name="region">
+                    <option value="">Choose a region</option>
+                    <option value="UK">UK</option>
+                    <option value="England">England</option>
+                    <option value="Wales">Wales</option>
+                    <option value="Scotland">Scotland</option>
+                    <option value="Northern_Ireland">Northern Ireland</option>
+                    <option value="England_and_Wales">England &amp; Wales</option>
+                    <option value="England_N">England N</option>
+                    <option value="England_S">England S</option>
+                    <option value="Scotland_N">Scotland N</option>
+                    <option value="Scotland_E">Scotland E</option>
+                    <option value="Scotland_W">Scotland W</option>
+                    <option value="England_E_and_NE">England E &amp; NE</option>
+                    <option value="England_NW_and_N_Wales">England NW/Wales N</option>
+                    <option value="Midlands">Midlands</option>
+                    <option value="East_Anglia">East Anglia</option>
+                    <option value="England_SW_and_S_Wales">England SW/Wales S</option>
+                    <option value="England_SE_and_Central_S">England SE/Central S</option>
+                </select>
+          </div>
+        <div class="form-group">
+                <label for="parameter">Parameter</label>
+                <select id="parameter" name="parameter">
+                        <option value="">Choose a parameter</option>
+                        <option value="Tmax">Max temp</option>
+                        <option value="Tmin">Min temp</option>
+                        <option value="Tmean">Mean temp</option>
+                        <option value="Sunshine">Sunshine</option>
+                        <option value="Rainfall">Rainfall</option>
+                        <option value="Raindays1mm">Rain days ≥1.0mm</option>
+                        <option value="AirFrost">Days of air frost</option>
+                </select>
+        </div>
+          <button type="submit" class="btn btn-primary">Display Data</button>
+</form>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
